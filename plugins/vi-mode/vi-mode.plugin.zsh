@@ -1,4 +1,4 @@
-# Ensures that $terminfo values are valid and updates editor information when
+  # Ensures that $terminfo values are valid and updates editor information when
 # the keymap changes.
 function zle-keymap-select zle-line-init zle-line-finish {
   # The terminal must be in application mode when ZLE is active for $terminfo
@@ -19,7 +19,13 @@ zle -N zle-line-finish
 zle -N zle-keymap-select
 
 bindkey -v
-
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+export KEYTIMEOUT=1
 # if mode indicator wasn't setup by theme, define default
 if [[ "$MODE_INDICATOR" == "" ]]; then
   MODE_INDICATOR="%{$fg_bold[red]%}<%{$fg[red]%}<<%{$reset_color%}"
