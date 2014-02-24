@@ -86,7 +86,7 @@ prompt_git() {
 
 prompt_virtualenvWrapper() {
 
-  [[ -n "$VIRTUAL_ENV" ]] && prompt_segment green black "☀ `basename $VIRTUAL_ENV`"
+  [[ -n "$VIRTUAL_ENV" ]] && prompt_segment cyan black "☀ `basename $VIRTUAL_ENV`"
 
 }
 # Dir: current working directory
