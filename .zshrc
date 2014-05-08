@@ -93,6 +93,7 @@ alias gco="git checkout"
 alias gbr="git branch"
 alias ls="ls -aF -G"
 alias gpu="git pull"
+alias gdf="git diff"
 alias gph="git push"
 alias lsd="ls -d"
 
