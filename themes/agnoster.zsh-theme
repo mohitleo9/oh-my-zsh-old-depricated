@@ -146,10 +146,8 @@ prompt_dir() {
 
 # Virtualenv: current working virtualenv
 prompt_virtualenv() {
-  local virtualenv_path="$VIRTUAL_ENV"
-  if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-    prompt_segment blue black "(`basename $virtualenv_path`)"
-  fi
+
+  [[ -n "$VIRTUAL_ENV" ]] && prompt_segment cyan black "☀ `basename $VIRTUAL_ENV`"
 }
 
 # Status:
@@ -171,7 +169,7 @@ build_prompt() {
   RETVAL=$?
   prompt_status
   prompt_virtualenv
-  prompt_context
+  # prompt_context
   prompt_dir
   prompt_git
   prompt_hg

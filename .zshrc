@@ -115,8 +115,8 @@ fi
 # export DYLD_FORCE_FLAT_NAMESPACE=1
 
 # this lets you view man pages in vim NOT KIDDING
-export PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
-    vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
+export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
+    vim --noplugin -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
     -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
     -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
 
