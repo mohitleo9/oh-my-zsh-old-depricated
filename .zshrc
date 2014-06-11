@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 # ovverride the default history completion with this really cool one
 # source $ZSH/.history-completion-for-zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 # source $ZSH/.history-completion-for-zsh/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
-# map this to do some coof stuff in 
+# map this to do some coof stuff in
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 # source $ZSH/.history-completion-for-zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -96,6 +96,9 @@ alias gpu="git pull"
 alias gdf="git diff"
 alias gph="git push"
 alias lsd="ls -d"
+# this is in case of error of opening macvim
+# http://stackoverflow.com/questions/17537871/macvim-failed-to-start-after-connecting-to-a-extra-display-and-disconnected
+alias clearvim='rm -r ~/Library/Preferences/*.vim.*'
 
 # set where virutal environments will live
 export WORKON_HOME=$HOME/.virtualenvs
@@ -116,8 +119,10 @@ fi
 
 # this lets you view man pages in vim NOT KIDDING
 export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
-    vim --noplugin -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
+    vim --cmd 'let g:plugins=2' --noplugin -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
     -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
+    -c 'set laststatus=0' -c 'set nonumber' \
+    -c 'set nocursorcolumn' -c 'set nocursorline' \
     -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
 
 
