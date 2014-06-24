@@ -88,6 +88,10 @@ bindkey '^e' end-of-line
 
 ######################################################################
 # custom modifications
+
+# source custom functions
+source $ZSH/githubCreate.sh
+
 alias denv="workon dxm && cd ~/Documents/dxm"
 alias gudenv="workon gudenv && cd ~/Documents/gudli"
 alias gst="git status"
@@ -99,6 +103,7 @@ alias gpu="git pull"
 alias gdf="git diff"
 alias gph="git push"
 alias lsd="ls -d"
+alias githubCreate=githubCreate
 # this is in case of error of opening macvim
 # http://stackoverflow.com/questions/17537871/macvim-failed-to-start-after-connecting-to-a-extra-display-and-disconnected
 alias clearvim='rm -r ~/Library/Preferences/*.vim.*'
