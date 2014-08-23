@@ -89,6 +89,10 @@ prompt_virtualenvWrapper() {
   [[ -n "$VIRTUAL_ENV" ]] && prompt_segment cyan black "☀ `basename $VIRTUAL_ENV`"
 
 }
+promt_task_remaining(){
+  ans=$(t|sed "/^\s*$/d"|wc -l| sed "s/ *//")
+  prompt_segment red black "$ans"
+}
 # Dir: current working directory
 prompt_dir() {
   prompt_segment blue black '☯ %~'
@@ -112,6 +116,7 @@ prompt_status() {
 ## Main prompt
 build_prompt() {
   RETVAL=$?
+  # promt_task_remaining
   prompt_status
   prompt_virtualenvWrapper
   prompt_git

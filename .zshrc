@@ -51,6 +51,9 @@ ZSH_THEME="remy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git vi-mode zsh-history-substring-search fasd)
 # eval "$(fasd --init auto)"
+export EDITOR='vim'
+# http://superuser.com/questions/306028/tmux-and-zsh-custom-prompt-bug-with-window-name
+DISABLE_AUTO_TITLE=true
 source $ZSH/oh-my-zsh.sh
 # ovverride the default history completion with this really cool one
 # source $ZSH/.history-completion-for-zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -60,6 +63,8 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 # source $ZSH/.history-completion-for-zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $ZSH/zsh-autosuggestions/autosuggestions.zsh
+# source completion for tmuxinator
+source ~/.tmuxinator/tmuxinator.zsh
 
 AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=242'
 zle-line-init() {
@@ -103,6 +108,7 @@ alias gpu="git pull"
 alias gdf="git diff"
 alias gph="git push"
 alias lsd="ls -d"
+alias gclean="git clean -df"
 alias githubCreate=githubCreate
 # this is in case of error of opening macvim
 # http://stackoverflow.com/questions/17537871/macvim-failed-to-start-after-connecting-to-a-extra-display-and-disconnected
