@@ -142,3 +142,6 @@ export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
 
 # inserting some of the cool custom functions
 setopt correct
+
+# set up fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
