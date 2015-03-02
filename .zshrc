@@ -131,6 +131,15 @@ fi
 #this line is for the macvim to funtion properly Don't remove it
 # export DYLD_FORCE_FLAT_NAMESPACE=1
 
+# this is used for refreshing tmux status bar on every command
+# this is a zsh command and runs before every zsh command
+if [[ -n $TMUX ]]; then
+    precmd() {
+        tmux refresh-client -S
+    }
+fi
+
+
 # this lets you view man pages in vim NOT KIDDING
 export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
     vim --cmd 'let g:plugins=2' --noplugin -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
