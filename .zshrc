@@ -106,7 +106,7 @@ alias gbr="git branch"
 alias ls="ls -aF -G"
 alias gpu="git pull"
 alias gdf="git diff"
-alias gph="git push"
+alias gph="git push -u"
 alias lsd="ls -d"
 alias gclean="git clean -df"
 alias githubCreate=githubCreate
@@ -114,6 +114,8 @@ alias githubCreate=githubCreate
 # http://stackoverflow.com/questions/17537871/macvim-failed-to-start-after-connecting-to-a-extra-display-and-disconnected
 alias clearvim='rm -r ~/Library/Preferences/*.vim.*'
 
+# tell the virtualenv to lay off prompt
+VIRTUAL_ENV_DISABLE_PROMPT=true
 # set where virutal environments will live
 export WORKON_HOME=$HOME/.virtualenvs
 # ensure all new environments are isolated from the site-packages directory
@@ -129,7 +131,7 @@ else
 fi
 
 #this line is for the macvim to funtion properly Don't remove it
-# export DYLD_FORCE_FLAT_NAMESPACE=1
+export DYLD_FORCE_FLAT_NAMESPACE=1
 
 # this is used for refreshing tmux status bar on every command
 # this is a zsh command and runs before every zsh command
