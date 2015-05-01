@@ -153,6 +153,21 @@ export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
 
 # inserting some of the cool custom functions
 setopt correct
-
-# set up fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# FZF functions
+__gsel(){
+  command git branch -r\
+    2> /dev/null | sed 1d | cut -b3- | $(__fzfcmd) -m | while read item; do
+    printf '%q ' "$item"
+  done
+  echo
+}
+
+fzf-git-widget() {
+  LBUFFER="${LBUFFER}$(__gsel)"
+  zle redisplay
+}
+zle     -N   fzf-git-widget
+bindkey '^g' fzf-git-widget
+
