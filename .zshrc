@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 export PATH="/usr/local/bin:usr/local:/usr/local/heroku/bin:\
             /usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:\
             /sbin:/usr/local/Cellar/ruby/2.0.0-p247/bin:\
-            /usr/local/CrossPack-AVR/bin"
+            /usr/local/CrossPack-AVR/bin:/sbin"
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -84,7 +84,9 @@ bindkey '^e' end-of-line
 # else
 #   export EDITOR='mvim'
 # fi
-
+# NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
