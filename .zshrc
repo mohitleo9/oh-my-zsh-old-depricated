@@ -112,6 +112,10 @@ alias gph="git push -u"
 alias lsd="ls -d"
 alias gclean="git clean -df"
 alias githubCreate=githubCreate
+alias gm="grunt mohit"
+alias gmf="grunt mohit force"
+# only for gymnasium project
+alias tag="git ls-files applications/gymnasium/src | ctags --tag-relative -L - -f .git/tags --languages=js,html"
 # this is in case of error of opening macvim
 # http://stackoverflow.com/questions/17537871/macvim-failed-to-start-after-connecting-to-a-extra-display-and-disconnected
 alias clearvim='rm -r ~/Library/Preferences/*.vim.*'
